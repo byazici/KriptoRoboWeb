@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+ 
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+ 
+    <appender name="mailAppender" class="org.apache.log4j.net.SMTPAppender">
+        <param name="BufferSize" value="50" />
+        <param name="SMTPHost" value="mail.kriptorobo.com" />
+        <param name="SMTPPort" value="465" />
+        <param name="SMTPUsername" value="hello@kriptorobo.com" />
+        <param name="SMTPPassword" value="3N+NBE_Z#5}2" />
+        <param name="From" value="hello@kriptorobo.com" />
+        <param name="To" value="burcinyazici@gmail.com" />
+        <param name="Subject" value="Kriptorobo Log Alert" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{ISO8601}]%n%n%-5p%n%n%c%n%n%m%n%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="error" />
+            <param name="LevelMax" value="fatal" />
+        </filter>
+    </appender>
+ 
+    <root>
+        <priority value="info" />
+        <appender-ref ref="mailAppender" />
+    </root>
+</log4j:configuration>
