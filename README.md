@@ -7,6 +7,8 @@ A Java Thread is observing prices and look for specific price to decide generate
 
 When a crypto's price down to buy price, engine buys the crypto. If it raise to trigger price within specified time thenn engine looks for the sell price to sell. If price go up continuously so sell price also.
 
+It support many crypto's that api supports.
+
 
 ## Key Features
 * https://github.com/BTCTrader/broker-api-docs is used to track price and generate orders.
